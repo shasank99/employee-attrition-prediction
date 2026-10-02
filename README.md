@@ -1,6 +1,9 @@
 # Employee Attrition Prediction
 
 A machine learning web application that predicts whether an employee is likely to leave an organization based on employee-related factors.
+## 📸 Application Screenshot
+
+![Employee Attrition Prediction](project-screenshot.pn
 
 ## Project Overview
 
