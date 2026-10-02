@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Attrition Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Employee Attrition Prediction</h1>
+
+        <p>
+            Enter employee information to predict attrition.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <label>Age</label>
+            <input type="number" name="age" required>
+
+
+            <label>Monthly Income</label>
+            <input type="number" name="income" required>
+
+
+            <label>Job Satisfaction</label>
+            <select name="satisfaction" required>
+                <option value="1">1 - Low</option>
+                <option value="2">2 - Medium</option>
+                <option value="3">3 - High</option>
+                <option value="4">4 - Very High</option>
+            </select>
+
+
+            <label>Years at Company</label>
+            <input type="number" name="years" required>
+
+
+            <label>Overtime</label>
+            <select name="overtime" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+
+            <label>Distance From Home (km)</label>
+            <input type="number" name="distance" required>
+
+
+            <button type="submit">
+                Predict Attrition
+            </button>
+
+        </form>
+
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <h2>Prediction Result</h2>
+
+            <p>{{ prediction }}</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
